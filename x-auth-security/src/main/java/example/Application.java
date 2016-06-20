@@ -51,7 +51,7 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
 
         String[] restEndpointsToSecure = { "news"};
         for (String endpoint : restEndpointsToSecure) {
